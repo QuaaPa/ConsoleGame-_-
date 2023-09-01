@@ -11,7 +11,7 @@ void Ren::RenderMap(int PosX, int PosY)
         }
         std::cout << std::endl;
     }
-
+    std::cout << "x-[" << PosX<<"] y-["<<PosY<<"]"<<std::endl;
     map[PosY][PosX] = 'o';
         
     

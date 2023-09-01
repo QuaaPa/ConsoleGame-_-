@@ -14,6 +14,8 @@ public:
     void CreateMap();
     void ReadMap();
 
+    int height();
+    int width();
 
 };
 
