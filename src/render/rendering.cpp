@@ -1,14 +1,18 @@
 #include "rendering.hpp"
 
-    void render(std::vector<std::vector<char>> map)
+void Ren::RenderMap(int PosX, int PosY)
+{
+    
+    for (int y = 0; y < map.size(); y++)
     {
-
-        for (int y = 0; y < map.size(); y++)
+        for (int x = 0; x < map[y].size(); x++)
         {
-            for (int x = 0; x < map[y].size(); x++)
-            {
-                std::cout << map[y][x];
-            }
-            std::cout << std::endl;
+            std::cout << map[y][x];
         }
+        std::cout << std::endl;
     }
+
+    map[PosY][PosX] = 'o';
+        
+    
+}

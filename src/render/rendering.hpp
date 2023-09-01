@@ -5,7 +5,7 @@
 #include <vector>
 #include <iostream>
 
-class Rendering
+class Ren
 {
 
 private:
@@ -19,12 +19,7 @@ public:
         this->map = map;
     }
 
-
-    void render(std::vector<std::vector<char>> map)
-    void renderMap()
-    {
-        render(map);
-    }
+    void RenderMap(int PosX, int PosY);
 
 };
 

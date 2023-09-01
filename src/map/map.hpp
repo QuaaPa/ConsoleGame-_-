@@ -5,7 +5,6 @@
 #include <vector>
 #include <fstream>
 #include <string>
-#include <vector>
 
 class Map
 {

@@ -44,9 +44,14 @@ void Map::CreateMap()
         std::getline(FileMap, MapLine);
         for (int x = 0; x < width(); x++)
         {
-
-            if (MapLine[x] == '0') map[y][x] = ' ';
-            else map[y][x] = MapLine[x];
+            if(MapLine[x] == '0')
+            {
+                map[y][x] = ' ';
+            }
+            else
+		    {
+		        map[y][x] = MapLine[x];
+		    }
         }
     }
 }
