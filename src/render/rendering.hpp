@@ -14,21 +14,16 @@ private:
 
 public:
     //set default map
-    void setmap(std::vector<std::vector<char>> map)
+    void SetMap(std::vector<std::vector<char>> map)
     {
         this->map = map;
     }
 
+
+    void render(std::vector<std::vector<char>> map)
     void renderMap()
     {
-        for (int y = 0; y < map.size(); y++)
-        {
-            for (int x = 0; x < map[y].size(); x++)
-            {
-                std::cout << map[y][x];
-            }
-            std::cout << std::endl;
-        }
+        render(map);
     }
 
 };

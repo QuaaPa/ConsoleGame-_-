@@ -13,7 +13,7 @@ int main()
     defaultMap.ReadMap();
 
     Rendering window;
-    window.setmap(defaultMap.map);
+    window.SetMap(defaultMap.map);
 
     window.renderMap();
 
