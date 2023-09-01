@@ -127,7 +127,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\map\map.cpp" />
+    <ClCompile Include="src\render\rendering.cpp" />
     <ClCompile Include="src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\map\map.hpp" />
+    <ClInclude Include="src\render\rendering.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\map\map.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

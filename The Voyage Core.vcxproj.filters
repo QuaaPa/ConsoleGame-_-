@@ -2,5 +2,14 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\render\rendering.cpp" />
+    <ClCompile Include="src\map\map.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\render\rendering.hpp" />
+    <ClInclude Include="src\map\map.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\map\map.txt" />
   </ItemGroup>
 </Project>
