@@ -11,5 +11,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="src\map\map.txt" />
+    <Text Include="src\map\game_over.txt" />
+    <Text Include="src\map\victory.txt" />
   </ItemGroup>
 </Project>

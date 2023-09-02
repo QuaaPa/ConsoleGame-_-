@@ -9,8 +9,8 @@
 class Player
 {
 public:
-	int PosX = 1;
-	int PosY = 5;
+	int PosX = 20;
+	int PosY = 13;
 };
 
 

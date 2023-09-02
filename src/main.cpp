@@ -11,6 +11,12 @@
 #include "render/rendering.hpp"
 #include "player/player.hpp"
 
+void GameLogicMovie(int& PosY) {
+    while (true) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(650));
+        PosY--;
+    }
+}
 
 int main()
 {
@@ -18,67 +24,59 @@ int main()
     Map PlayerMap;
     PlayerMap.ReadMap();
 
+    //set map to vector
     Render window;
     window.SetMap(PlayerMap.map);
 
+    //init player
     Player player1;
 
 
-    int width = PlayerMap.width() - 2; // -2 because i need fake barier 
-    std::cout << "width-[" << width << "]";
-    int height = PlayerMap.height() - 2;   // -2 because i need fake barier 
-    std::cout << "height-[" << height << "]"<<std::endl;
 
-    //Game loop
-    while (true)
+    //Get width and height from class MAP
+    int width = PlayerMap.width() - 2; // -2 because i need fake barier 
+    int height = PlayerMap.height() - 2;   // -2 because i need fake barier 
+
+
+
+
+    //Game Logic movie
+    std::thread LOGIC(GameLogicMovie, std::ref(player1.PosY));
+    LOGIC.detach();
+
+
+    while(true)
     {
-        //CLEAR FRAME
-        Sleep(50);
+        Sleep(25);
         system("cls");
 
-        //set position player
-        if(player1.PosX > 1)
+
+        //RIGHT
+        if (player1.PosX < width)
+        {
+            if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
+            {
+                player1.PosX += 1;
+            }
+            Sleep(1);
+        }
+
+        //LEFT
+        if (player1.PosX > 1)
         {
             if (GetAsyncKeyState(VK_LEFT) & 0x8000)
             {
                 player1.PosX -= 1;
             }
             Sleep(1);
-
-        }
-        if (player1.PosY > 1)
-        {
-            if (GetAsyncKeyState(VK_UP) & 0x8000)
-            {
-                player1.PosY -= 1;
-            }
-            Sleep(1);
-
-        }
-        if(player1.PosY < height)
-        {
-            if (GetAsyncKeyState(VK_DOWN) & 0x8000)
-            {
-                player1.PosY += 1;
-            }
-            Sleep(1);
-        }
-        if(player1.PosX < width)
-        {
-            if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
-            {
-                player1.PosX +=1;
-            }
-            Sleep(1);
         }
 
-
-        //RENDER MAP WITH PLAYER
-        std::cout << "x-[" << player1.PosX<<"] y-["<<player1.PosY<<"]"<<std::endl;
-        window.RenderMap(player1.PosX,player1.PosY, width, height);
+        //render game
+        window.RenderMap(player1.PosX, player1.PosY, width, height);
     }
 
 
     return 0;
 
 }
+

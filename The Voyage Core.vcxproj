@@ -136,7 +136,9 @@
     <ClInclude Include="src\render\rendering.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="src\map\game_over.txt" />
     <Text Include="src\map\map.txt" />
+    <Text Include="src\map\victory.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
