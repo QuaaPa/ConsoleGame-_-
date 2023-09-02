@@ -10,7 +10,7 @@ class Player
 {
 public:
 	int PosX = 1;
-	int PosY = 1;
+	int PosY = 5;
 };
 
 

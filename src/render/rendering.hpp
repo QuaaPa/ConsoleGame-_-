@@ -4,8 +4,9 @@
 
 #include <vector>
 #include <iostream>
+#include <string>
 
-class Ren
+class Render
 {
 
 private:
@@ -19,7 +20,7 @@ public:
         this->map = map;
     }
 
-    void RenderMap(int PosX, int PosY);
+    void RenderMap(int PosX, int PosY, int width, int height);
 
 };
 

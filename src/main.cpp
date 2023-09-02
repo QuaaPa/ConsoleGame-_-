@@ -18,64 +18,64 @@ int main()
     Map PlayerMap;
     PlayerMap.ReadMap();
 
-    Ren window;
+    Render window;
     window.SetMap(PlayerMap.map);
 
     Player player1;
 
 
-    int width = PlayerMap.width();
+    int width = PlayerMap.width() - 2; // -2 because i need fake barier 
     std::cout << "width-[" << width << "]";
-    int height = PlayerMap.height();
+    int height = PlayerMap.height() - 2;   // -2 because i need fake barier 
     std::cout << "height-[" << height << "]"<<std::endl;
 
     //Game loop
     while (true)
     {
         //CLEAR FRAME
-        Sleep(250);
+        Sleep(50);
         system("cls");
 
         //set position player
-        if(player1.PosX > 0)
+        if(player1.PosX > 1)
         {
             if (GetAsyncKeyState(VK_LEFT) & 0x8000)
             {
-                player1.PosX = -1;
+                player1.PosX -= 1;
             }
-            Sleep(10);
+            Sleep(1);
 
         }
-        if (player1.PosY > 0)
+        if (player1.PosY > 1)
         {
             if (GetAsyncKeyState(VK_UP) & 0x8000)
             {
-                player1.PosY = -1;
+                player1.PosY -= 1;
             }
-            Sleep(10);
+            Sleep(1);
 
         }
         if(player1.PosY < height)
         {
             if (GetAsyncKeyState(VK_DOWN) & 0x8000)
             {
-                player1.PosY = +1;
+                player1.PosY += 1;
             }
-            Sleep(10);
+            Sleep(1);
         }
         if(player1.PosX < width)
         {
             if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
             {
-                player1.PosX = +1;
+                player1.PosX +=1;
             }
-            Sleep(10);
+            Sleep(1);
         }
 
 
         //RENDER MAP WITH PLAYER
         std::cout << "x-[" << player1.PosX<<"] y-["<<player1.PosY<<"]"<<std::endl;
-        window.RenderMap(player1.PosX,player1.PosY);
+        window.RenderMap(player1.PosX,player1.PosY, width, height);
     }
 
 

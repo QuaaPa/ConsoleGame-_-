@@ -1,6 +1,6 @@
 #include "map.hpp"
 
-int height()
+int Map::height()
 {
     std::ifstream file("src/map/map.txt");
     std::string line;
@@ -14,7 +14,7 @@ int height()
     return height;
 }
 
-int width()
+int Map::width()
 {
     std::ifstream file("src/map/map.txt");
     std::string line;
